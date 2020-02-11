@@ -1,3 +1,5 @@
+package ExceptionsExercises.model;
+
 public abstract class Pessoa {
     private String name;
     private Integer idade;

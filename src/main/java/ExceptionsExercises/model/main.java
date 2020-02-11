@@ -1,3 +1,5 @@
+package ExceptionsExercises.model;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -5,8 +7,8 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        /*Pessoa funcionario = new Funcionario("Daniel Melo", 20);
-        Pessoa cliente = new Cliente("Salomão Souza", 20);
+        /*ExceptionsExercises.model.Pessoa funcionario = new ExceptionsExercises.model.Funcionario("Daniel Melo", 20);
+        ExceptionsExercises.model.Pessoa cliente = new ExceptionsExercises.model.Cliente("Salomão Souza", 20);
         funcionario.calculaIdadeEm10Anos();
         cliente.calculaIdadeEm10Anos();
         StringBuffer messageToPrint = new StringBuffer("Idade do ");
@@ -26,7 +28,7 @@ public class main {
         System.out.println(tstInt);*/
         //method1();
         methodFile();
-        System.out.println("The main execution is ended");
+        System.out.println("The ExceptionsExercises.model.main execution is ended");
     }
 
     public static void method2(){

@@ -1,3 +1,5 @@
+package ExceptionsExercises.model;
+
 public class Funcionario extends Pessoa {
     public Funcionario(String name, Integer idade) {
         super(name, idade);
