@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        /*ExceptionsExercises.model.Pessoa funcionario = new ExceptionsExercises.model.Funcionario("Daniel Melo", 20);
-        ExceptionsExercises.model.Pessoa cliente = new ExceptionsExercises.model.Cliente("Salomão Souza", 20);
+        /*ExceptionsExercises.model.entities.Pessoa funcionario = new ExceptionsExercises.model.entities.Funcionario("Daniel Melo", 20);
+        ExceptionsExercises.model.entities.Pessoa cliente = new ExceptionsExercises.model.entities.Cliente("Salomão Souza", 20);
         funcionario.calculaIdadeEm10Anos();
         cliente.calculaIdadeEm10Anos();
         StringBuffer messageToPrint = new StringBuffer("Idade do ");

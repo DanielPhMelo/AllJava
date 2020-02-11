@@ -1,4 +1,4 @@
-package ExceptionsExercises.model;
+package ExceptionsExercises.model.entities;
 
 public class Funcionario extends Pessoa {
     public Funcionario(String name, Integer idade) {

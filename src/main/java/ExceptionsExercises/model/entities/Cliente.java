@@ -1,4 +1,4 @@
-package ExceptionsExercises.model;
+package ExceptionsExercises.model.entities;
 
 public class Cliente extends Pessoa {
     public Cliente(String name, Integer idade) {

@@ -1,5 +1,8 @@
 package ExceptionsExercises.model;
 
+import ExceptionsExercises.model.exceptions.DomainException;
+import ExceptionsExercises.model.interfaces.Reservation;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +14,10 @@ public class ReservationImpl implements Reservation {
 
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-    public ReservationImpl(Integer roomNumber, Date checkinDate, Date checkoutDate) {
+    public ReservationImpl(Integer roomNumber, Date checkinDate, Date checkoutDate) throws DomainException{
+        if (checkinDate.after(checkoutDate)){
+            throw new DomainException("Data de CheckIn não pode ser maior que data de Checkout");
+        }
         this.roomNumber = roomNumber;
         this.checkinDate = checkinDate;
         this.checkoutDate = checkoutDate;
@@ -22,13 +28,13 @@ public class ReservationImpl implements Reservation {
         return TimeUnit.DAYS.convert(diffBetweenDates, TimeUnit.MILLISECONDS);
     }
 
-    public String updateDates(Date checkIn, Date checkOut) {
+    public String updateDates(Date checkIn, Date checkOut) throws DomainException {
         Date now = new Date();
         if (checkIn.before(now) || checkOut.before(now)){
-            return "Error when making reservation. The dates must be future dates";
+            throw new DomainException("Error when making reservation. The dates must be future dates") ;
         }
         if (checkIn.after(checkOut)){
-            return "Data de CheckIn não pode ser maior que data de Checkout";
+            throw new DomainException("Data de CheckIn não pode ser maior que data de Checkout");
         }
 
         this.checkinDate = checkIn;
