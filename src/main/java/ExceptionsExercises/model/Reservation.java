@@ -5,5 +5,5 @@ import java.util.GregorianCalendar;
 
 public interface Reservation {
     Long getDurationInDays();
-    void updateDates(Date checking, Date checkout);
+    String updateDates(Date checking, Date checkout);
 }

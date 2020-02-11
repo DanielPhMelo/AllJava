@@ -31,18 +31,15 @@ public class MainExecution {
             System.out.println("CheckOut Date - dd/mm/yyyy: ");
             checkOutDate = simpleDateFormat.parse(scanner.next()) ;
 
-            Date now = new Date();
-            if (checkinDate.before(now) || checkOutDate.before(now)){
-                System.out.println("Error when making reservation. The dates must be future dates");
-            }
-            else if (checkinDate.after(checkOutDate)){
-                System.out.println("Data de CheckIn não pode ser maior que data de Checkout");
-            }
-            else{
-                reservation.updateDates(checkinDate, checkOutDate);
+            String returnedMessage = reservation.updateDates(checkinDate, checkOutDate);
+
+            if (returnedMessage.equals(null)){
+                System.out.println(reservation.toString());
+            }else
+            {
+                System.out.println(returnedMessage);
             }
 
-            System.out.println(reservation.toString());
         }
 
         scanner.close();

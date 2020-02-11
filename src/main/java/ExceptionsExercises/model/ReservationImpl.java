@@ -22,9 +22,19 @@ public class ReservationImpl implements Reservation {
         return TimeUnit.DAYS.convert(diffBetweenDates, TimeUnit.MILLISECONDS);
     }
 
-    public void updateDates(Date checkIn, Date checkOut) {
+    public String updateDates(Date checkIn, Date checkOut) {
+        Date now = new Date();
+        if (checkIn.before(now) || checkOut.before(now)){
+            return "Error when making reservation. The dates must be future dates";
+        }
+        if (checkIn.after(checkOut)){
+            return "Data de CheckIn não pode ser maior que data de Checkout";
+        }
+
         this.checkinDate = checkIn;
         this.checkoutDate = checkOut;
+
+        return null;
     }
 
     @Override
